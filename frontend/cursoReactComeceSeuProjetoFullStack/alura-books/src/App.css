@@ -6,5 +6,36 @@
 
 .App-header{
     background-color: white;
+    display: flex;
+    justify-content: center;
+}
 
+li{
+    list-style: none;
+}
+
+.lista__primary{
+    display: flex;
+}
+
+.lista__item{
+    min-width: 120px;
+    font-size: 16px;
+    justify-content:  center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+
+.lista_secundaria{
+    display:flex;
+    align-items: center;
+}
+
+.lista__item__icone{
+    margin-right: 40px;
+    width: 25px;
 }
