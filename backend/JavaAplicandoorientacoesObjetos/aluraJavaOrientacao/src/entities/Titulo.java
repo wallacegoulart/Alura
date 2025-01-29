@@ -11,6 +11,12 @@ public class Titulo {
 	private int duracaoEmMinutos;
 	
 	
+	public Titulo(String nome, int anoLancamento) {
+		super();
+		this.nome = nome;
+		this.anoLancamento = anoLancamento;
+	}
+
 	public String getNome() {
 		return nome;
 	}
@@ -19,11 +25,11 @@ public class Titulo {
 		this.nome = nome;
 	}
 
-	public int getAnoLancamento() {
+	public int getAnoDeLancamento() {
 		return anoLancamento;
 	}
 
-	public void setAnoLancamento(int anoLancamento) {
+	public void setAnoDeLancamento(int anoLancamento) {
 		this.anoLancamento = anoLancamento;
 	}
 
