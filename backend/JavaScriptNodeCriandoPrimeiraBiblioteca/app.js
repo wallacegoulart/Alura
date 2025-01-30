@@ -6,6 +6,7 @@ const link = caminhoArquivo[2];
 fs.readFile(link,'utf-8',(err,texto) => {
     if(err){throw err;}
     console.log(texto);
+    console.log("Concluido com sucesso")
 })
 
 console.log(link);
