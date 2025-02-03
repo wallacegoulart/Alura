@@ -1,11 +1,16 @@
 const fs = require('fs');
+const tratarErros = require('./erros/funcoesErro');
 
 const caminhoArquivo = process.argv;
 const link = caminhoArquivo[2];
 
 fs.readFile(link,'utf-8',(err,texto) => {
-    if(err){throw err;}
-    quebraParagrafos(texto);
+    try{
+        if(err){throw err;}
+        quebraParagrafos(texto);
+    } catch(err){
+        tratarErros(err); 
+    }     
 })
 //1) Primeiro problema (video 01)
 // pegar o texto splitando pelo espaço e jogar num array 
