@@ -1,17 +1,3 @@
-const fs = require('fs');
-const tratarErros = require('./erros/funcoesErro');
-
-const caminhoArquivo = process.argv;
-const link = caminhoArquivo[2];
-
-fs.readFile(link,'utf-8',(err,texto) => {
-    try{
-        if(err){throw err;}
-        quebraParagrafos(texto);
-    } catch(err){
-        tratarErros(err); 
-    }     
-})
 //1) Primeiro problema (video 01)
 // pegar o texto splitando pelo espaço e jogar num array 
 // pegar essa palavra e jogar dentro de um objeto, se repetir ele conta 
@@ -30,7 +16,7 @@ function limparPalavra(palavra){
 }
 
 
-function quebraParagrafos(texto){
+export function quebraParagrafos(texto){
     const listaParagrafos = texto.toLowerCase().split('\n');
     const novoDicPalavras =  listaParagrafos.flatMap((paragrafos) =>{
         if(!paragrafos){return[]};
