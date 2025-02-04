@@ -5,12 +5,30 @@ import {quebraParagrafos} from './app.js'
 
 const caminhoArquivo = process.argv;
 const link = caminhoArquivo[2];
+const endereco = caminhoArquivo[3]
+
 
 fs.readFile(link,'utf-8',(err,texto) => {
     try{
         if(err){throw err;}
-        quebraParagrafos(texto);
+        const listaPalavras = quebraParagrafos(texto);
+        criaESalvaArquivo(listaPalavras,endereco);
     } catch(err){
         tratarErros(err); 
     }     
 })
+
+//criar um função para gerar um arquivo em txt
+async function criaESalvaArquivo(listaPalavras,endereco){
+
+    const arquivoNovo = `${endereco}/resultado.txt`;
+    const textoPalavras = JSON.stringify(listaPalavras);
+
+    try{
+        await fs.promises.writeFile(arquivoNovo, textoPalavras);
+        console.log("Arquivo criado com sucesso!!");
+    }catch(erro){
+        throw erro;
+
+    }
+}

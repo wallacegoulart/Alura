@@ -22,7 +22,8 @@ export function quebraParagrafos(texto){
         if(!paragrafos){return[]};
         return criacaoObejtoContandoPalavras(paragrafos); 
     });
-    console.log( novoDicPalavras)
+    //console.log(novoDicPalavras)
+    return novoDicPalavras
 }
 
 
